@@ -1,0 +1,13 @@
+build/
+output/
+.vscode/
+*.gcda
+*.gcno
+*.gcov
+*.exe
+*.obj
+*.o
+*.aux
+*.log
+*.out
+*.toc
