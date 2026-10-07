@@ -11,4 +11,3 @@ output/
 *.log
 *.out
 *.toc
-build/

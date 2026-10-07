@@ -1,9 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
+#include "BubbleSorter.h"
+#include <utility>
 
-void bubbleSort(std::vector<int>& vet)
+void BubbleSorter::sort(std::vector<int>& vet) const
 {                                                   // 1  Entrada
     int n = static_cast<int>(vet.size());           // 2  n = size
     for (int i = n - 1; i >= 1; i--)                // 3  i = n-1
@@ -16,4 +14,3 @@ void bubbleSort(std::vector<int>& vet)
         }                                           //10  i--
     }                                               //11  Salida
 }
-

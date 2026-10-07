@@ -4,9 +4,20 @@
 **Docente:** DSc. Edgar Sarmiento Calisaya
 **Autora:** Alice Gabriela Sucasaca Ilasaca
 
-Pruebas unitarias con **Google Test** y cobertura de código con **gcov** para el método `bubbleSort` (C++),
+Pruebas unitarias con **Google Test** y cobertura de código con **gcov** para `BubbleSorter::sort` (C++),
 diseñadas a partir del **grafo de flujo de control** y la **complejidad ciclomática** (V(G) = 4).
 
-# Resultados
+## Estructura
+- `src/` implementación (`BubbleSorter.h`, `BubbleSorter.cpp`)
+- `test/` pruebas (`test.cpp`)
+
+## Cobertura
+```
+cd build/CMakeFiles/bubble.dir/src
+gcov -b -c BubbleSorter.cpp.gcno | grep -A5 "BubbleSorter.cpp'"
+cat BubbleSorter.cpp.gcov
+```
+
+## Resultados
 - Pruebas: **5/5 PASSED**
-- Cobertura de `bubbleSort.cpp`: **100 %** 
+- Cobertura de `BubbleSorter.cpp`: **100 %** de líneas (7/7) y de ramas (6/6)

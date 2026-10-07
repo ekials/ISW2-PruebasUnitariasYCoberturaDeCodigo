@@ -1,10 +1,11 @@
 #include <gtest/gtest.h>
-#include "bubbleSort.cpp"
+#include "BubbleSorter.h"
 #include <vector>
 
 class BubbleSortTest : public ::testing::Test
 {
 protected:
+    BubbleSorter sorter;
     std::vector<int> vet;
 
     void SetUp() override    { vet.clear(); }   
@@ -19,8 +20,8 @@ TEST_F(BubbleSortTest, EmptyOrSingleElement)
     std::vector<int> expectedEmpty = {};
     std::vector<int> expectedSingle = {42};
 
-    bubbleSort(empty);
-    bubbleSort(single);
+    sorter.sort(empty);
+    sorter.sort(single);
 
     EXPECT_EQ(empty, expectedEmpty);
     EXPECT_EQ(single, expectedSingle);
@@ -30,7 +31,7 @@ TEST_F(BubbleSortTest, EmptyOrSingleElement)
 TEST_F(BubbleSortTest, AlreadySorted_NoSwap)
 {   vet = {1, 2, 3, 4};
     std::vector<int> expected = {1, 2, 3, 4};
-    bubbleSort(vet);
+    sorter.sort(vet);
     EXPECT_EQ(vet, expected);
 }
 
@@ -39,7 +40,7 @@ TEST_F(BubbleSortTest, Unsorted_WithSwap)
 {
     vet = {4, 3, 2, 1};
     std::vector<int> expected = {1, 2, 3, 4};
-    bubbleSort(vet);
+    sorter.sort(vet);
     EXPECT_EQ(vet, expected);
 }
 
@@ -48,7 +49,7 @@ TEST_F(BubbleSortTest, MixedCase)
 {
     vet = {5, 1, 4, 2, 8};
     std::vector<int> expected = {1, 2, 4, 5, 8};
-    bubbleSort(vet);
+    sorter.sort(vet);
     EXPECT_EQ(vet, expected);
 }
 
@@ -57,7 +58,7 @@ TEST_F(BubbleSortTest, TwoElementsSwap)
 {
     vet = {9, 3};
     std::vector<int> expected = {3, 9};
-    bubbleSort(vet);
+    sorter.sort(vet);
     EXPECT_EQ(vet, expected);
 }
 
